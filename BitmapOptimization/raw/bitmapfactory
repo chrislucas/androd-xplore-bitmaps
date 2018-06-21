@@ -1,0 +1,20 @@
+Interessante
+Processing Bitmaps Off the UI Thread
+https://stuff.mit.edu/afs/sipb/project/android/docs/training/displaying-bitmaps/process-bitmap.html
+
+
+Loading Large Bitmaps Efficiently - Fonte MIT e AndroidDeveloper
+https://stuff.mit.edu/afs/sipb/project/android/docs/training/displaying-bitmaps/load-bitmap.html
+https://developer.android.com/topic/performance/graphics/load-bitmap
+
+Erro que precisa ser estudado
+java.lang.OutOfMemoryError: Failed to allocate 7MB until OOM
+
+
+https://developer.android.com/reference/android/graphics/BitmapFactory.Options.html#inSampleSize
+
+
+Performance improvement and Bitmap pooling in Android
+https://www.linkedin.com/pulse/performance-improvement-bitmap-pooling-android-ali-muzaffar/
+
+
