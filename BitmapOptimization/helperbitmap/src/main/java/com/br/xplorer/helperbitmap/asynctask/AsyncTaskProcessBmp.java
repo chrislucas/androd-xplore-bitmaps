@@ -1,24 +1,27 @@
-package com.br.xplorer.helperbitmap;
+package com.br.xplorer.helperbitmap.asynctask;
 
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 
-import com.br.xplorer.helperbitmap.callback.CallbackAsyncTaskProcessBitmap;
+public class AsyncTaskProcessBmp extends AsyncTask<Void, Void, Bitmap> {
 
-public class AsyncTaskProcessBitmap extends AsyncTask<Void, Void, Bitmap> {
 
+    public interface CallbackAsyncTask {
+        Bitmap doInBackground(Bitmap originalBitmap);
+        void onPostExecute(Bitmap bitmap);
+    }
 
     private Bitmap originalBitmap;
-    private CallbackAsyncTaskProcessBitmap callbackAsyncTaskProcessBitmap;
+    private CallbackAsyncTask callbackAsyncTask;
 
-    public AsyncTaskProcessBitmap(Bitmap originalBitmap, CallbackAsyncTaskProcessBitmap callbackAsyncTaskProcessBitmap) {
+    public AsyncTaskProcessBmp(Bitmap originalBitmap, CallbackAsyncTask callbackAsyncTask) {
         this.originalBitmap = originalBitmap;
-        this.callbackAsyncTaskProcessBitmap = callbackAsyncTaskProcessBitmap;
+        this.callbackAsyncTask = callbackAsyncTask;
     }
 
     @Override
     protected Bitmap doInBackground(Void... voids) {
-        return callbackAsyncTaskProcessBitmap.doInBackground(originalBitmap);
+        return callbackAsyncTask.doInBackground(originalBitmap);
     }
 
     @Override
@@ -29,7 +32,7 @@ public class AsyncTaskProcessBitmap extends AsyncTask<Void, Void, Bitmap> {
     @Override
     protected void onPostExecute(Bitmap result) {
         super.onPostExecute(result);
-        callbackAsyncTaskProcessBitmap.onPostExecute(result);
+        callbackAsyncTask.onPostExecute(result);
     }
 
     @Override

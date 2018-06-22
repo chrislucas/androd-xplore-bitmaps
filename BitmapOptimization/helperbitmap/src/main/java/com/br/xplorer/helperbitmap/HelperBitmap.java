@@ -294,7 +294,6 @@ public class HelperBitmap {
         else {
             bitmap = HelperBitmap.resize(foto, measure2, measure).get();
         }
-
         Log.i("PHOTO", String.format("Imagem da Lista: Dimensao (%d, %d)."
                     +
                         "\nQuantidade de bytes Minimos para alocar essa imagem %d."
@@ -305,7 +304,6 @@ public class HelperBitmap {
                 , bitmap.getByteCount()
                 , bitmap.getByteCount() * 1.0f / (1024.0f * 1024.0f)
         ));
-
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
             int b = bitmap.getAllocationByteCount();
             Log.i("PHOTO", String.format("Bytes alocados para armazenar essa imagem %d.\n" +

@@ -1,0 +1,6 @@
+https://developer.android.com/reference/android/util/LruCache
+https://developer.android.com/topic/performance/graphics/cache-bitmap
+https://developer.android.com/topic/performance/graphics/manage-memory#inBitmap
+
+
+https://stackoverflow.com/questions/14493429/optimizing-bitmap-creation-sizing-in-android
